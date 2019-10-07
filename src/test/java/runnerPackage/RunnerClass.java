@@ -9,10 +9,14 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"html:target/cucumberreports", "json:target/report.json"},
-        features = "/Users/ilkinhasanov/spr/src/test/resources/features",
+        features = "/Users/ilkinhasanov/spr/src/test/resources",
         glue = "stepDefinition",
-        tags = "@calculator",
+        tags = "@sauceDemo",
         dryRun = false
+
+
+
+
 )
 public class RunnerClass {
 

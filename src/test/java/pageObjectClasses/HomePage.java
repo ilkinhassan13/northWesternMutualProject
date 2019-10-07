@@ -6,7 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class HomePage {
+
+
 
     WebDriver driver;
 
@@ -15,28 +19,35 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(id = "calculate-mt")
-    public WebElement meterButton;
+    @FindBy(className ="product_sort_container")
+    public WebElement sortSelect;
 
-    @FindBy(id = "wth-m1")
-    public WebElement widthA;
+    @FindBy(xpath = "//div[@class='inventory_list']//div[1]//div[3]//button[1]")
+    public WebElement itemFirst;
 
-    @FindBy(id = "len-m1")
-    public WebElement lengthA;
+    @FindBy(xpath = "//button[@class='btn_primary btn_inventory']")
+    public WebElement itemSecond;
 
-    @FindBy(id = "wth-m2")
-    public WebElement widthB;
+    @FindBy(xpath = "//div[3]//div[3]//button[1]")
+    public WebElement itemThird;
 
-    @FindBy(id = "len-m2")
-    public WebElement lengthB;
 
-    @FindBy(id = "SubmitAndCalculate")
-    public WebElement calculate;
+    @FindBy(xpath= "//*[contains(@class,'svg-inline--fa fa-shopping-cart fa-w-18 fa-3x')]")
+    public WebElement shoppingCart;
 
-    @FindBy(id = "totarea-res")
-    public WebElement totalArea;
+    @FindBy(xpath = "//div[@class='inventory_list']//div[1]//div[3]//button[1]")
+    public WebElement anotherItem;
 
-    @FindBy(id = "totarea-res-10-perc")
-    public WebElement wastage;
+    @FindBy(xpath = "//div[@class='pricebar']/div")
+    public List< WebElement> listOfPrices;
+
+    @FindBy(xpath = "//div[@class='inventory_item_name']")
+    public  List <WebElement> listOfItems;
+
+    @FindBy(xpath ="//div[@class='product_label']")
+    public WebElement productsText;
+
+    @FindBy(xpath ="(//div[@class='inventory_item_name'])[1]")
+    public WebElement anotherItemText;
 
 }
